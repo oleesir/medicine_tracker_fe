@@ -5,7 +5,6 @@ export const Wrapper = styled.div`
   height: 100vh;
   display: flex;
   flex-direction: column;
-  //background-color: blue;
 `;
 
 export const StyledHeader = styled.div`
@@ -52,7 +51,6 @@ export const SignupBtn = styled.button`
 
 
 export const Logo = styled.h1`
-  font-family: "Apple Symbols";
   color: #030303;
 `;
 
