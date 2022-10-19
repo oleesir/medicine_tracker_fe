@@ -6,7 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="4e481e32-b41b-4302-8f88-3af64b6bd400" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Dashboard/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,7 +23,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2G8jWs9UiLNxa1nsIRFAJittWDP" />
   <component name="ProjectLevelVcsManager">
@@ -57,6 +60,7 @@
       <workItem from="1665779192365" duration="9660000" />
       <workItem from="1665855799915" duration="21588000" />
       <workItem from="1665972026568" duration="6201000" />
+      <workItem from="1666208129931" duration="7222000" />
     </task>
     <servers />
   </component>
