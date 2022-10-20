@@ -6,10 +6,11 @@ import {
 } from "react-router-dom";
 import Layout from "./pages/Layout";
 import Welcome from "./pages/Welcome";
-import Dashboard from "./pages/Dashboard";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
+import Home from './pages/Home';
 import './App.css';
+
 
 
 
@@ -21,7 +22,7 @@ const router = createBrowserRouter(
             <Route path="/" element={<Welcome/>}/>
             <Route path="/signup" element={<Signup/>}/>
             <Route path="/login" element={<Login/>}/>
-            <Route path="/dashboard" element={<Dashboard/>}/>
+            <Route path="/home" element={<Home/>}/>
         </Route>
     )
 );
