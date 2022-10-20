@@ -9,11 +9,8 @@ import Welcome from "./pages/Welcome";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Home from './pages/Home';
+import NewMedication from "./pages/NewMedication";
 import './App.css';
-
-
-
-
 
 
 const router = createBrowserRouter(
@@ -23,6 +20,7 @@ const router = createBrowserRouter(
             <Route path="/signup" element={<Signup/>}/>
             <Route path="/login" element={<Login/>}/>
             <Route path="/home" element={<Home/>}/>
+            <Route path="/new_medication" element={<NewMedication/>}/>
         </Route>
     )
 );
