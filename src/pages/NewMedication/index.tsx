@@ -1,3 +1,4 @@
+import {useNavigate} from "react-router-dom";
 import {
     Logo,
     LogoDiv,
@@ -14,18 +15,33 @@ import {
 
 
 
+
 const NewMedication = () => {
+    let navigate = useNavigate();
+
+    const back = () => {
+        return navigate(-1);
+    };
+
+    const logout = () => {
+        return navigate("/");
+    };
+
+    const navToHome = () => {
+        return navigate("/home");
+    };
+
     return (
         <Wrapper>
             <StyledHeader>
                 <LogoDiv>
                     <Logo>RemindMe</Logo>
                 </LogoDiv>
-                <LogoutBtn>Logout</LogoutBtn>
+                <LogoutBtn onClick={logout}>Logout</LogoutBtn>
             </StyledHeader>
             <Content>
                 <SubHeader>
-                    <BackBtn>Back</BackBtn>
+                    <BackBtn onClick={back}>Back</BackBtn>
                 </SubHeader>
                 <FormContainer>
                     <Label htmlFor="name">Name</Label>
@@ -49,7 +65,7 @@ const NewMedication = () => {
                     <Label htmlFor="third_dose">Third Dose</Label>
                     <Input type="text" id="third_dose" placeholder="12:00PM"/>
 
-                    <SubmitBtn>Save</SubmitBtn>
+                    <SubmitBtn onClick={navToHome}>Save</SubmitBtn>
                 </FormContainer>
             </Content>
         </Wrapper>

@@ -1,3 +1,4 @@
+import {useNavigate} from "react-router-dom";
 import {
     Logo,
     LogoDiv,
@@ -13,12 +14,27 @@ import {
     LoginText
 } from "../Login/styles";
 
+
 const Login = () => {
+
+    let navigate = useNavigate();
+
+    const navToWelcome = () => {
+        return navigate("/");
+    };
+
+    const navToHome = () => {
+        return navigate("/home");
+    };
+
+    const navToSignup = () => {
+        return navigate("/signup");
+    };
     return (
         <Wrapper>
             <StyledHeader>
                 <LogoDiv>
-                    <Logo>RemindMe</Logo>
+                    <Logo onClick={navToWelcome}>RemindMe</Logo>
                 </LogoDiv>
             </StyledHeader>
             <Content>
@@ -26,10 +42,10 @@ const Login = () => {
                     <Heading>Welcome back</Heading>
                     <Input type="text" placeholder="Email"/>
                     <Input type="text" placeholder="Password"/>
-                    <SignupBtn>Login</SignupBtn>
+                    <SignupBtn onClick={navToHome}>Login</SignupBtn>
                     <LoginContainer>
                         <Text color="#A5A9B2" bottom="1rem" size="1rem">Don't have an account? <LoginText
-                            color="#030303" bottom="1rem" size="1rem">Signup</LoginText></Text>
+                            color="#030303" bottom="1rem" size="1rem" onClick={navToSignup}>Signup</LoginText></Text>
                     </LoginContainer>
                 </Container>
             </Content>

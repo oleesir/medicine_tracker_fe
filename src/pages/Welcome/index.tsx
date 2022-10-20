@@ -1,3 +1,4 @@
+import {useNavigate} from "react-router-dom";
 import {
     Wrapper,
     StyledHeader,
@@ -12,7 +13,17 @@ import {
 } from "./styles";
 
 
+
 const Welcome = () => {
+    let navigate = useNavigate();
+
+    const navToLogin = () => {
+        return navigate("/login");
+    };
+
+    const navToSignup = () => {
+        return navigate("/signup");
+    };
     return (
         <Wrapper>
             <StyledHeader>
@@ -20,8 +31,8 @@ const Welcome = () => {
                     <Logo>RemindMe</Logo>
                 </LogoDiv>
                 <ButtonDiv>
-                    <LoginBtn>Login</LoginBtn>
-                    <SignupBtn>Sign up</SignupBtn>
+                    <LoginBtn onClick={navToLogin}>Login</LoginBtn>
+                    <SignupBtn onClick={navToSignup}>Sign up</SignupBtn>
                 </ButtonDiv>
             </StyledHeader>
             <Content>
@@ -34,7 +45,7 @@ const Welcome = () => {
                         <BannerText bottom='4rem' color='#727272' size='1rem'>RemindMe is a task management program
                             developed by Olive Inc. the platforms that allows users to create lists of medications and set
                             notifications for themselves.</BannerText>
-                        <div><SignupBtnOne>Sign up</SignupBtnOne></div>
+                        <div><SignupBtnOne onClick={navToSignup}>Sign up</SignupBtnOne></div>
                     </BannerContentChild>
                 </BannerContent>
                 <ImgContent><Pic src={'/reminder_photo.png'}/></ImgContent>

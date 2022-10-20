@@ -1,4 +1,5 @@
 import { FaTrashAlt,FaPencilAlt } from "react-icons/fa";
+import { useNavigate} from "react-router-dom";
 import {
     Logo,
     LogoDiv,
@@ -22,18 +23,31 @@ import {
 } from "../Home/styles";
 
 
+
 const Home = () => {
+    let navigate = useNavigate();
+
+    const newMedication = () => {
+        return navigate("/new_medication");
+    };
+
+
+    const logout = () => {
+        return navigate("/");
+    };
+
+
     return (
         <Wrapper>
             <StyledHeader>
                 <LogoDiv>
                     <Logo>RemindMe</Logo>
                 </LogoDiv>
-                <LogoutBtn>Logout</LogoutBtn>
+                <LogoutBtn onClick={logout}>Logout</LogoutBtn>
             </StyledHeader>
             <Content>
                 <SubHeader>
-                    <NewBtn>New</NewBtn>
+                    <NewBtn  onClick={newMedication}>New</NewBtn>
                 </SubHeader>
                 <TableContainer>
                     <ul>
