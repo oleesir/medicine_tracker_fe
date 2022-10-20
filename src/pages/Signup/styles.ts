@@ -11,7 +11,7 @@ export const StyledHeader = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
-  padding: 20px 40px;
+  padding: 10px 40px;
   align-items: center;
 `;
 
@@ -97,32 +97,6 @@ export const LoginText = styled.span<{ size?: string, bottom?: string, color?: s
   font-weight: ${props => props.weight};
   cursor: pointer;
 `;
-//
-// export const BannerContent = styled.div`
-//   width: 50%;
-//   display: flex;
-//   padding-top: 10rem;
-//   padding-left: 10rem;
-//   padding-right: 10rem;
-// `;
-//
-//
-// export const ImgContent = styled.div`
-//   padding-top: 4rem;
-//   width: 50%;
-//   padding-right: 5rem;
-// `;
-//
-//
-// export const BannerContentChild = styled.div`
-//   display: flex;
-//   flex-direction: column;
-// `;
-//
-// export const BannerText = styled.p<{ size?: string, bottom?: string, color?: string, weight?: string }>`
-//   font-size: ${props => props.size};
-//   color: ${props => props.color};
-//   margin-bottom: ${props => props.bottom};
-//   font-weight: ${props => props.weight};
-// `;
+
+
 
