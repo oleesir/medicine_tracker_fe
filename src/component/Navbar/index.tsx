@@ -53,10 +53,10 @@ const  Navbar =()=> {
                      </div>
 
                      <>
-                         { !menuOpen && <div onClick={handleNav} className="fixed inset-0 bg-gray-800 opacity-75 ease-in-out duration-300"></div>}
+                         { menuOpen && <div onClick={handleNav} className="fixed inset-0 bg-gray-800 opacity-75 ease-in-out duration-300"></div>}
                          <div
                              className={`top-0 left-0 w-60 bg-[#234559]  p-5  text-white fixed h-full z-40  ease-in-out duration-300 ${
-                                 menuOpen ? "translate-x-[-100%] " : "translate-x-0"
+                                 !menuOpen ? "translate-x-[-100%] " : "translate-x-0"
                              }`}
                          >
                              <div className="flex ">
