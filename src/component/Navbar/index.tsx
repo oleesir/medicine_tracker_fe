@@ -7,7 +7,16 @@ const  Navbar =()=> {
     const [menuOpen,setMenuOpen]= useState<boolean>(false);
 
     const pushToLogin = async() => {
-        await router.push("/login")
+        await router.push("/login");
+    }
+
+    const routeToLogin = async() => {
+        await router.push("/login");
+        setMenuOpen(!menuOpen);
+    }
+    const pushToSignup = async() => {
+        await router.push("/signup");
+        setMenuOpen(!menuOpen);
     }
 
     const handleNav = () => {
@@ -33,7 +42,7 @@ const  Navbar =()=> {
                              </button>
                          </div>
                          <div className="block lg:hidden">
-                             <button onClick={handleNav}>
+                             <button onClick={ handleNav}>
                                  <svg  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8 stroke-[#224559]">
                                      <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                                  </svg>
@@ -42,11 +51,31 @@ const  Navbar =()=> {
                          </div>
 
                      </div>
-                     <div className={menuOpen ? "fixed left-0 top-0 w-[65%] lg:hidden h-screen bg-[#FFF] p-10 ease-out duration-500 z-[1035]" :
-                         "fixed left-[-100%] top-0 p-10 ease-out duration-500 z-[1035]"}>
-                        <h1>READ</h1>
-                         <h1>READ</h1>
-                     </div>
+
+                     <>
+                         { !menuOpen && <div onClick={handleNav} className="fixed inset-0 bg-gray-800 opacity-75 ease-in-out duration-300"></div>}
+                         <div
+                             className={`top-0 left-0 w-60 bg-[#234559]  p-5  text-white fixed h-full z-40  ease-in-out duration-300 ${
+                                 menuOpen ? "translate-x-[-100%] " : "translate-x-0"
+                             }`}
+                         >
+                             <div className="flex ">
+                                 <div className="w-full mt-20">
+                                     <button
+                                         onClick={routeToLogin}
+                                         className="block w-full cursor-pointer rounded-lg p-4 transition duration-500 hover:bg-[#fff] hover:text-[#234559] ">
+                                         Login
+                                     </button>
+                                     <button
+                                         onClick={pushToSignup}
+                                         className="block w-full cursor-pointer rounded-lg p-4 transition duration-500 hover:bg-[#fff] hover:text-[#234559] ">
+                                         Signup
+                                     </button>
+                                 </div>
+                             </div>
+                         </div>
+                     </>
+
                  </div>
 
              </div>
