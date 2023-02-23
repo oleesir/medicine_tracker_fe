@@ -1,17 +1,25 @@
 import { useRouter } from 'next/router'
+import Drawer from "@/component/Drawer";
+import { useState } from "react";
 
 
 const  Navbar =()=> {
-    const router = useRouter()
+    const router = useRouter();
+    const [menuOpen,setMenuOpen]= useState<boolean>(false);
 
     const pushToLogin = async() => {
         await router.push("/login")
     }
 
+    const handleNav = () => {
+       setMenuOpen(!menuOpen);
+    }
+
     return (
      <>
+
          {router.pathname === "/signup" || router.pathname === "/login" ? null :(
-             <div className="bg-[#FFF] pt-[10px] pb-[10px] ">
+             <div className="bg-[#FFF] pt-[10px] pb-[10px] z-[1035]">
                  <div className="max-w-9xl mx-auto px-4 sm:px-6 lg:px-8">
                      <div className="flex justify-between h-16 items-center" >
                          <div className="flex">
@@ -26,13 +34,24 @@ const  Navbar =()=> {
                              </button>
                          </div>
                          <div className="block lg:hidden">
-                             <svg  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8 stroke-[#224559]">
-                                 <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                             </svg>
+                             <button onClick={handleNav}>
+                                 <svg  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8 stroke-[#224559]">
+                                     <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                                 </svg>
+                             </button>
+
                          </div>
+
+                     </div>
+                     <div className={menuOpen ? "fixed left-0 top-0 w-[65%] lg:hidden h-screen bg-[#FFF] p-10 ease-out duration-500 z-[1035]" :
+                         "fixed left-[-100%] top-0 p-10 ease-out duration-500 z-[1035]"}>
+                        <h1>READ</h1>
+                         <h1>READ</h1>
                      </div>
                  </div>
+
              </div>
+
          )}
 
      </>
