@@ -14,9 +14,15 @@ const  Navbar =()=> {
         await router.push("/login");
         setMenuOpen(!menuOpen);
     }
-    const pushToSignup = async() => {
+
+    const routeToSignup = async() => {
         await router.push("/signup");
         setMenuOpen(!menuOpen);
+    }
+
+
+    const pushToSignup = async() => {
+        await router.push("/signup");
     }
 
     const handleNav = () => {
@@ -40,6 +46,11 @@ const  Navbar =()=> {
                                  <span className="absolute inset-0 border-0 group-hover:border-[25px] ease-linear duration-100 transition-all border-white rounded-md"></span>
                                  <span className="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-[#224559]">Login</span>
                              </button>
+
+                             <button onClick={pushToSignup}  className="relative inline-flex items-center justify-start inline-block px-5 py-3 overflow-hidden font-medium transition-all bg-[#224559] rounded-md hover:bg-white group ml-5">
+                                 <span className="absolute inset-0 border-0 group-hover:border-[25px] ease-linear duration-100 transition-all border-white rounded-md"></span>
+                                 <span className="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-[#224559]">Sign up</span>
+                             </button>
                          </div>
                          <div className="block lg:hidden">
                              <button onClick={ handleNav}>
@@ -55,7 +66,7 @@ const  Navbar =()=> {
                      <>
                          { menuOpen && <div onClick={handleNav} className="fixed inset-0 bg-gray-800 opacity-75 ease-in-out duration-300 lg:hidden"></div>}
                          <div
-                             className={`top-0 left-0 w-60 bg-[#234559]  p-5  text-white fixed h-full z-40  ease-in-out duration-300 lg:hidden ${
+                             className={`top-0 left-0 w-60 bg-[#234559]  p-5  text-white fixed h-full z-40  ease-in-out duration-300 lg:hidden lg:z-0${
                                  !menuOpen ? "translate-x-[-100%] " : "translate-x-0"
                              }`}
                          >
@@ -67,7 +78,7 @@ const  Navbar =()=> {
                                          Login
                                      </button>
                                      <button
-                                         onClick={pushToSignup}
+                                         onClick={routeToSignup}
                                          className="block w-full cursor-pointer rounded-lg p-4 transition duration-500 hover:bg-[#fff] hover:text-[#234559] ">
                                          Signup
                                      </button>
