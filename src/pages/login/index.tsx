@@ -30,9 +30,10 @@ const Login =()=> {
                         <input type="password" className="w-full py-2 bg-gray-100 text-gray-500 px-1 outline-none mb-4"/>
                         <div className="flex w-full justify-center mt-3"><p className="text-gray-700 text-sm">If you dont have an account <span onClick={pushToSignup} className="text-[#224559] cursor-pointer">Signup</span></p></div>
                         <div className="w-full mt-8">
-                            <button className="w-full relative inline-flex inline-block px-5 py-3 overflow-hidden font-medium transition-all bg-[#224559] rounded-md hover:bg-white group">
-                                <span className="absolute inset-0 border-0 group-hover:border-[25px] ease-linear duration-100 transition-all border-white rounded-md"></span>
-                                <span className="relative w-full text-center text-white transition-colors duration-200 ease-in-out group-hover:text-[#224559]">Login</span>
+                            <button
+                                type="button"
+                                className="w-full inline-block rounded bg-primary-accent-200 px-5 py-3  text-medium font-medium bg-[#224559] leading-normal text-[#fff] ml-4">
+                                Login
                             </button>
                         </div>
                     </form>
