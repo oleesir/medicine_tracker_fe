@@ -13,17 +13,11 @@ export default function Home() {
           </Head>
           <div className="grid grid-cols-1 h-screen lg:grid-cols-2">
               <div className="flex bg-[#3a596b]">
-                  <div className="flex flex-col bg-[#224559] pt-[50px] pl-[10px] pr-[10px] pb-[50px] clip-path-polygon-[_0_0,_100%_10%,_100%_90%,_0_76%]
-              lg:clip-path-polygon-[_0_0,_100%_0,_100%_35%,_0_100%] lg:pt-[100px]
-              lg:pl-[50px] lg:pr-[50px]
-               ">
-                      <p className=" lg:text-2xl text-[#fff] mb-[20px] text-lg ">RemindMe is a task management web app developed by Olive Inc. The platforms that allows users to create lists of reminders for medications and set notifications for themselves.</p>
+                  <div className="flex flex-col justify-center items-center bg-[#224559] clip-path-polygon-[0_13%,100%_0,100%_86%,0_100%] px-5">
+                      <Image src='/med_intro.png' alt='undraw'  width={250} height={200} quality={10}/>
+                      <p className=" lg:text-2xl text-[#fff] mt-2 text-sm ">RemindMe is a web app developed by Olive Inc. The platforms that allows users to create lists of reminders for medications and set notifications for themselves.</p>
 
                   </div>
-              </div>
-
-              <div className="lg:pt-[80px]">
-                  <Image src='/undraw_mobile.png' alt='undraw'  width={1000} height={1000} quality={100}/>
               </div>
           </div>
       </>

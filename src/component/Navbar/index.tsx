@@ -23,9 +23,9 @@ const  Navbar =()=> {
     return (
      <>
          {router.pathname === "/signup" || router.pathname === "/login" ? null :(
-             <div className="bg-[#FFF] pt-[10px] pb-[10px] z-[1035]">
+             <div className="bg-[#FFF] p-4 z-[1035]">
                  <div className="max-w-9xl mx-auto px-4 sm:px-6 lg:px-8">
-                     <div className="flex justify-between py-4 items-center  mb-[10px]" >
+                     <div className="flex justify-between items-center" >
                          <div className="flex">
                              <div>
                                  <p className=" text-2xl lg:text-3xl">Remindme</p>
