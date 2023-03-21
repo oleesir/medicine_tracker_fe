@@ -2,21 +2,14 @@ import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import { signupSchema } from "@/schema/signup";
+import { SignupInputs } from "@/types";
 
 
-type SignupInputs = {
-    firstName: string,
-    lastName: string,
-    email: string,
-    phoneNumber: string,
-    callingCode: string,
-    password: string
-};
 const Signup =()=> {
     const router = useRouter();
     const {
         handleSubmit,register,
-        formState: { errors},
+        formState: { errors, isDirty, isValid }
     } = useForm<SignupInputs>({ resolver: yupResolver(signupSchema) });
 
     const onSubmitForm = (data:SignupInputs) => {
@@ -78,13 +71,14 @@ const Signup =()=> {
                             <div className="flex flex-col mb-5">
                                 <label className="text-gray-700 mb-2">Password</label>
                                 <input type="password" {...register("password")} className="w-full py-2 bg-gray-100 text-gray-500 px-1 outline-none"/>
-                                <div className="h-1"> {errors.password && <span className="text-xs text-[#FF0303]">This field is required</span>}</div>
+                                <div className="h-1"> <span className="text-xs text-[#FF0303]">{errors.password?.message}</span></div>
                             </div>
                             <div className="flex w-full justify-center mt-3"><p className="text-gray-700 text-sm">If you already have an account <span onClick={pushToLogin} className="text-[#224559] cursor-pointer">Login</span></p></div>
                             <div className="w-full mt-8 flex items-center">
                                 <button
                                     type="submit"
-                                    className="w-full inline-block rounded bg-primary-accent-200 px-5 py-3  text-medium font-medium bg-[#224559] leading-normal text-[#fff]">
+                                    disabled={!isDirty || !isValid}
+                                    className={ !isDirty || !isValid ? "w-full inline-block rounded bg-primary-accent-200 px-5 py-3  text-medium font-medium bg-[#224559] leading-normal text-[#fff] focus:outline-none disabled:opacity-25" : "w-full inline-block rounded bg-primary-accent-200 px-5 py-3  text-medium font-medium bg-[#224559] leading-normal text-[#fff]"}>
                                     Signup
                                 </button>
                             </div>
