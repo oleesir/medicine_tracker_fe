@@ -18,7 +18,7 @@ import {
 import { Fragment, useState } from 'react'
 
 
-const Calender =()=> {
+const Calender =({ isActive }:{isActive:boolean})=> {
     let today = startOfToday()
     let [selectedDay, setSelectedDay] = useState(today)
     let [currentMonth, setCurrentMonth] = useState(format(today, 'MMM-yyyy'))
@@ -49,7 +49,7 @@ const Calender =()=> {
 
 
     return (
-        <div className="flex flex-col  lg:pt-[100px] w-full">
+        <div className={ isActive ? "ease-in duration-500 max-h-[500px] overflow-hidden" : "overflow-hidden ease-in duration-500 max-h-0"}>
             <div className="border-2 rounded-b-lg">
                 <div className="max-w-md px-4 mx-auto sm:px-7 md:max-w-4xl md:px-6">
                     <div className="md:grid md:grid-cols-2 md:divide-x md:divide-gray-200">
