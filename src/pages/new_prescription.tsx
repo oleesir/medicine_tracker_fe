@@ -10,7 +10,7 @@ const NewPrescription =()=> {
                     <input type="text"  className="w-full py-3 bg-gray-100 px-5 outline-none rounded-lg "/>
                     {/*<div className="h-1"><span className="text-xs text-[#FF0303]"> {errors.firstName?.message}</span></div>*/}
                 </div>
-                <div className="flex mb-5 justify-between items-center">
+                <div className="flex mb-5">
                     <div className="w-3/9">
                         <label className="text-gray-700 mb-2">Dose</label>
                         <input type="number"  className="w-full py-3 bg-gray-100 px-5 outline-none rounded-lg "/>
@@ -49,7 +49,7 @@ const NewPrescription =()=> {
                 </div>
                 <div className="mb-5">
                     <label className="text-gray-700 mb-2">End date</label>
-                    <input type="text" placeholder="YYYY-MM-DD"  className="w-full py-2 bg-gray-100 placeholder:text-gray-500 px-5 outline-none rounded-lg "/>
+                    <input type="text" placeholder="YYYY-MM-DD"  className="w-full py-3 bg-gray-100 placeholder:text-gray-500 px-5 outline-none rounded-lg "/>
                     {/*<div className="h-1"><span className="text-xs text-[#FF0303]"> {errors.firstName?.message}</span></div>*/}
                 </div>
                 <div className="inline-block relative mb-5">
