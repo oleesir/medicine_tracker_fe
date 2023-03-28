@@ -14,12 +14,10 @@ const NewPrescription =()=> {
 
 
                 <div className="flex justify-between items-center mb-5">
-
-
                     <div className="w-1/4">
                         <label className="text-gray-700 mb-2">Dose</label>
                         <div>
-                            <select  className="w-full py-3 bg-gray-100 px-1 outline-none rounded-lg">
+                            <select  className="w-full py-3 bg-gray-100 px-1 outline-none rounded-lg appearance-none">
                                 <option value=""></option>
                                 <option value="+234">1</option>
                                 <option value="+22">2</option>
