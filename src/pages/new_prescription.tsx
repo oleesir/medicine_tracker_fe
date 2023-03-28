@@ -1,55 +1,71 @@
-import { RiArrowDownSLine, RiArrowLeftSLine } from "react-icons/ri";
+import { RiArrowDownSLine } from "react-icons/ri";
 
 const NewPrescription =()=> {
 
     return (
-        <div className="flex">
-            <form className="flex flex-col px-4">
+        <div className="flex w-full border-2 py-4 px-2">
+            <form className="flex flex-col w-full">
                 <div className="mb-5">
                     <label className="text-gray-700 mb-2">Name</label>
-                    <input type="text"  className="w-full py-3 bg-gray-100 px-5 outline-none rounded-lg "/>
+                    <input type="text"  className="w-full py-3 bg-gray-100 px-5 outline-none rounded-lg text-sm"/>
                     {/*<div className="h-1"><span className="text-xs text-[#FF0303]"> {errors.firstName?.message}</span></div>*/}
                 </div>
-                <div className="flex mb-5">
-                    <div className="w-3/9">
+
+
+
+                <div className="flex justify-between items-center mb-5">
+
+
+                    <div className="w-1/4">
                         <label className="text-gray-700 mb-2">Dose</label>
-                        <input type="number"  className="w-full py-3 bg-gray-100 px-5 outline-none rounded-lg "/>
+                        <div>
+                            <select  className="w-full py-3 bg-gray-100 px-1 outline-none rounded-lg text-sm">
+                                <option value=""></option>
+                                <option value="+234">1</option>
+                                <option value="+22">2</option>
+                                <option value="+22">3</option>
+                            </select>
+                        </div>
+
                         {/*<div className="h-1"><span className="text-xs text-[#FF0303]"> {errors.firstName?.message}</span></div>*/}
                     </div>
-                    <div className="mx-2 inline-block relative">
+
+
+                    <div className="w-1/3">
                         <label className="text-gray-700 mb-2">Unit</label>
-                        <select  className="w-3/9 py-3 bg-gray-100 px-5 outline-none rounded-lg appearance-none">
-                            <option value=""></option>
-                            <option value="+234">mg</option>
-                            <option value="+22">ml</option>
-                            <option value="+22">micrograms</option>
-                        </select>
-                        <div
-                            className="pointer-events-none absolute inset-y-0 right-2 flex top-6 items-center text-gray-700">
-                            <RiArrowDownSLine/>
+                        <div>
+                            <select  className="w-full py-3 bg-gray-100 pl-0.5 outline-none rounded-lg text-sm">
+                                <option value=""></option>
+                                <option value="+234">mg</option>
+                                <option value="+22">ml</option>
+                                <option value="+22">micrograms</option>
+                            </select>
                         </div>
+
                         {/*<div className="h-1"><span className="text-xs text-[#FF0303]"> {errors.firstName?.message}</span></div>*/}
                     </div>
-                    <div className="inline-block relative">
-                        <label className="text-gray-700 mb-2">Form</label>
-                        <select  className="w-3/9 py-3 bg-gray-100 px-5 outline-none rounded-lg appearance-none">
-                            <option value="" ></option>
-                            <option value="+234">Capsule</option>
-                            <option value="+22">Injection</option>
-                            <option value="+22">Tablet</option>
-                            <option value="+22">Cream</option>
-                            <option value="+22">Drops</option>
-                        </select>
-                        <div
-                            className="pointer-events-none absolute inset-y-0 right-2 flex top-6 items-center text-gray-700">
-                            <RiArrowDownSLine/>
+
+
+                    <div className="w-1/3">
+                        <label className="text-gray-700 mb-1">Form</label>
+                        <div>
+                            <select  className="w-full py-3 bg-gray-100 px-1 outline-none rounded-lg text-sm">
+                                <option value="" ></option>
+                                <option value="+234">Capsule</option>
+                                <option value="+22">Injection</option>
+                                <option value="+22">Tablet</option>
+                                <option value="+22">Cream</option>
+                                <option value="+22">Drops</option>
+                            </select>
+
                         </div>
+
                         {/*<div className="h-1"><span className="text-xs text-[#FF0303]"> {errors.firstName?.message}</span></div>*/}
                     </div>
                 </div>
                 <div className="mb-5">
                     <label className="text-gray-700 mb-2">End date</label>
-                    <input type="text" placeholder="YYYY-MM-DD"  className="w-full py-3 bg-gray-100 placeholder:text-gray-500 px-5 outline-none rounded-lg "/>
+                    <input type="text" placeholder="YYYY-MM-DD"  className="w-full py-3 bg-gray-100 placeholder:text-gray-500 px-4 outline-none rounded-lg "/>
                     {/*<div className="h-1"><span className="text-xs text-[#FF0303]"> {errors.firstName?.message}</span></div>*/}
                 </div>
                 <div className="inline-block relative mb-5">
@@ -75,8 +91,8 @@ const NewPrescription =()=> {
                 <div className="mb-5">
                     <label className="text-gray-700 mb-2">Reminder 1</label>
                     <div className="flex justify-between">
-                        <div className="inline-block relative">
-                            <select  className="w-3/9 py-3 bg-gray-100 px-10 outline-none rounded-lg appearance-none">
+                        <div className="inline-block relative w-1/4">
+                            <select  className="w-full py-3 bg-gray-100 px-3 outline-none rounded-lg appearance-none">
                                 <option value="" ></option>
                                 <option value="1">01</option>
                                 <option value="2">02</option>
@@ -97,8 +113,8 @@ const NewPrescription =()=> {
                             </div>
                         </div>
 
-                        <div className="inline-block relative">
-                            <select  className="w-3/9 py-3 bg-gray-100 px-10 outline-none rounded-lg appearance-none">
+                        <div className="inline-block relative w-1/4">
+                            <select  className="w-full py-3 bg-gray-100 px-3 outline-none rounded-lg appearance-none">
                                 <option value="" ></option>
                                 <option value="00">00</option>
                                 <option value="01">01</option>
@@ -166,8 +182,8 @@ const NewPrescription =()=> {
                                 <RiArrowDownSLine/>
                             </div>
                         </div>
-                        <div className="inline-block relative">
-                            <select  className="w-3/9 py-3 bg-gray-100 px-10 outline-none rounded-lg appearance-none">
+                        <div className="inline-block relative w-1/4">
+                            <select  className="w-full py-3 bg-gray-100 pl-3 outline-none rounded-lg appearance-none">
                                 <option value="" ></option>
                                 <option value="1">AM</option>
                                 <option value="2">PM</option>
