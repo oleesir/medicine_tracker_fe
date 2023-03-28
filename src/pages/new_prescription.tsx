@@ -3,7 +3,7 @@ import { RiArrowDownSLine } from "react-icons/ri";
 const NewPrescription =()=> {
 
     return (
-        <div className="flex w-full border-2 py-4 px-5">
+        <div className="flex w-full py-4 px-5">
             <form className="flex flex-col w-full">
                 <div className="mb-5">
                     <label className="text-gray-700 mb-2">Name</label>
@@ -17,7 +17,7 @@ const NewPrescription =()=> {
                     <div className=" inline-block relative w-1/4">
                         <label className="text-gray-700 mb-2">Dose</label>
                         <div>
-                            <select  className="w-full py-3 bg-gray-100 px-1 outline-none rounded-lg appearance-none">
+                            <select  className="w-full py-3 bg-gray-100 pl-6 outline-none rounded-lg appearance-none">
                                 <option value=""></option>
                                 <option value="+234">1</option>
                                 <option value="+22">2</option>
@@ -32,25 +32,28 @@ const NewPrescription =()=> {
                     </div>
 
 
-                    <div className="w-1/3">
+                    <div className="inline-block relative w-1/3">
                         <label className="text-gray-700 mb-2">Unit</label>
                         <div>
-                            <select  className="w-full py-3 bg-gray-100 pl-0.5 outline-none rounded-lg">
+                            <select  className="w-full py-3 bg-gray-100 pl-2 outline-none rounded-lg appearance-none">
                                 <option value=""></option>
                                 <option value="+234">mg</option>
                                 <option value="+22">ml</option>
                                 <option value="+22">micrograms</option>
                             </select>
                         </div>
-
+                        <div
+                            className="pointer-events-none absolute inset-y-0 right-2 flex top-6 items-center text-gray-700">
+                            <RiArrowDownSLine/>
+                        </div>
                         {/*<div className="h-1"><span className="text-xs text-[#FF0303]"> {errors.firstName?.message}</span></div>*/}
                     </div>
 
 
-                    <div className="w-1/3">
+                    <div className=" inline-block relative w-1/3">
                         <label className="text-gray-700 mb-1">Form</label>
                         <div>
-                            <select  className="w-full py-3 bg-gray-100 px-1 outline-none rounded-lg">
+                            <select  className="w-full py-3 bg-gray-100 pl-4 outline-none rounded-lg appearance-none">
                                 <option value="" ></option>
                                 <option value="+234">Capsule</option>
                                 <option value="+22">Injection</option>
@@ -58,9 +61,11 @@ const NewPrescription =()=> {
                                 <option value="+22">Cream</option>
                                 <option value="+22">Drops</option>
                             </select>
-
                         </div>
-
+                        <div
+                            className="pointer-events-none absolute inset-y-0 right-2 flex top-6 items-center text-gray-700">
+                            <RiArrowDownSLine/>
+                        </div>
                         {/*<div className="h-1"><span className="text-xs text-[#FF0303]"> {errors.firstName?.message}</span></div>*/}
                     </div>
                 </div>
