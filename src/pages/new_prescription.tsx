@@ -14,7 +14,7 @@ const NewPrescription =()=> {
 
 
                 <div className="flex justify-between items-center mb-5">
-                    <div className=" inline-block relative w-1/4">
+                    <div className=" inline-block relative w-1/5">
                         <label className="text-gray-700 mb-2">Dose</label>
                         <div>
                             <select  className="w-full py-3 bg-gray-100 pl-6 outline-none rounded-lg appearance-none">
@@ -32,10 +32,10 @@ const NewPrescription =()=> {
                     </div>
 
 
-                    <div className="inline-block relative w-1/3">
+                    <div className="inline-block relative w-2/5">
                         <label className="text-gray-700 mb-2">Unit</label>
                         <div>
-                            <select  className="w-full py-3 bg-gray-100 pl-2 outline-none rounded-lg appearance-none">
+                            <select  className="w-full py-3 bg-gray-100 pl-4 outline-none rounded-lg appearance-none">
                                 <option value=""></option>
                                 <option value="+234">mg</option>
                                 <option value="+22">ml</option>
