@@ -14,7 +14,7 @@ const NewPrescription =()=> {
 
 
                 <div className="flex justify-between items-center mb-5">
-                    <div className="w-1/4">
+                    <div className=" inline-block relative w-1/4">
                         <label className="text-gray-700 mb-2">Dose</label>
                         <div>
                             <select  className="w-full py-3 bg-gray-100 px-1 outline-none rounded-lg appearance-none">
@@ -24,7 +24,10 @@ const NewPrescription =()=> {
                                 <option value="+22">3</option>
                             </select>
                         </div>
-
+                        <div
+                            className="pointer-events-none absolute inset-y-0 right-2 flex top-6 items-center text-gray-700">
+                            <RiArrowDownSLine/>
+                        </div>
                         {/*<div className="h-1"><span className="text-xs text-[#FF0303]"> {errors.firstName?.message}</span></div>*/}
                     </div>
 
