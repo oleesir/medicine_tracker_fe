@@ -3,7 +3,7 @@ import { RiArrowDownSLine } from "react-icons/ri";
 const NewPrescription =()=> {
 
     return (
-        <div className="flex w-full border-2 py-4 px-2">
+        <div className="flex w-full border-2 py-4 px-5">
             <form className="flex flex-col w-full">
                 <div className="mb-5">
                     <label className="text-gray-700 mb-2">Name</label>
@@ -19,7 +19,7 @@ const NewPrescription =()=> {
                     <div className="w-1/4">
                         <label className="text-gray-700 mb-2">Dose</label>
                         <div>
-                            <select  className="w-full py-3 bg-gray-100 px-1 outline-none rounded-lg text-sm">
+                            <select  className="w-full py-5 bg-gray-100 px-1 outline-none rounded-lg text-sm">
                                 <option value=""></option>
                                 <option value="+234">1</option>
                                 <option value="+22">2</option>
@@ -34,7 +34,7 @@ const NewPrescription =()=> {
                     <div className="w-1/3">
                         <label className="text-gray-700 mb-2">Unit</label>
                         <div>
-                            <select  className="w-full py-3 bg-gray-100 pl-0.5 outline-none rounded-lg text-sm">
+                            <select  className="w-full py-5 bg-gray-100 pl-0.5 outline-none rounded-lg text-sm">
                                 <option value=""></option>
                                 <option value="+234">mg</option>
                                 <option value="+22">ml</option>
@@ -49,7 +49,7 @@ const NewPrescription =()=> {
                     <div className="w-1/3">
                         <label className="text-gray-700 mb-1">Form</label>
                         <div>
-                            <select  className="w-full py-3 bg-gray-100 px-1 outline-none rounded-lg text-sm">
+                            <select  className="w-full py-5 bg-gray-100 px-1 outline-none rounded-lg text-sm">
                                 <option value="" ></option>
                                 <option value="+234">Capsule</option>
                                 <option value="+22">Injection</option>
