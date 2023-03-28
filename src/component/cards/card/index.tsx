@@ -25,7 +25,7 @@ const  Card =()=> {
                 <button onClick={handleChange}>
                     <BsThreeDotsVertical fontSize={25}/>
                 </button>
-                {open ? <div className="absolute bg-[#FFF] right-7 -top-1  w-20 rounded-lg drop-shadow-xl z-40 p-3">
+                {open ? <div className="absolute bg-[#FFF] right-7 -top-1  w-20 rounded-lg drop-shadow-xl p-3">
                     <button className="mb-2 text-sm" onClick={handleChange}>Edit</button>
                     <button className="text-sm" onClick={handleChange}>Delete</button>
                 </div> : null}

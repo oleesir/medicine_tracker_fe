@@ -39,7 +39,6 @@ const Signup =()=> {
                                 <label className="text-gray-700 mb-2">Firstname</label>
                                 <input type="text" {...register("firstName")} className="w-full py-2 bg-gray-100 text-gray-500 px-1 outline-none "/>
                                 <div className="h-1"><span className="text-xs text-[#FF0303]"> {errors.firstName?.message}</span></div>
-
                             </div>
                             <div className="mb-5">
                                 <label className="text-gray-700 mb-2">Lastname</label>

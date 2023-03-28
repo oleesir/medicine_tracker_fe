@@ -16,7 +16,6 @@ export default function Home() {
                   <div className="flex flex-col justify-center items-center bg-[#224559] clip-path-polygon-[0_13%,100%_0,100%_86%,0_100%] px-5">
                       <Image src='/med_intro.png' alt='undraw'  width={250} height={200} quality={10}/>
                       <p className=" lg:text-2xl text-[#fff] mt-2 text-sm ">RemindMe is a web app developed by Olive Inc. The platforms that allows users to create lists of reminders for medications and set notifications for themselves.</p>
-
                   </div>
               </div>
           </div>
