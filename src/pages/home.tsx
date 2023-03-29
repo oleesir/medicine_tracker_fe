@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
 import Calender from "@/component/Calender";
-import Card from "@/component/cards/card";
+import Card from "@/component/Cards/Card";
 import { RiArrowDownSLine, RiArrowLeftSLine } from "react-icons/ri";
 import { MdOutlineAdd } from "react-icons/md";
 

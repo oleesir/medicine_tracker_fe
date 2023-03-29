@@ -12,3 +12,12 @@ export type LoginInputs = {
     email: string,
     password: string
 };
+
+
+export type PrescriptionInputs = {
+    name: string,
+    dose: number,
+    unit: string,
+    form: string,
+    endDate: string,
+};
