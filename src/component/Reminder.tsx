@@ -1,27 +1,25 @@
-import {useState} from "react";
-import Image from "next/image";
-import {BsThreeDotsVertical} from "react-icons/bs";
-
+import { Dispatch, SetStateAction } from "react";
 import { RiArrowDownSLine } from "react-icons/ri";
 
-const  Reminder =()=> {
-    const [reminderOneActive, setReminderOneActive] = useState(false);
+
+const  Reminder =({ title, isActive, setIsActive, register, errors, reminderHours, reminderMins, reminderAmOrPm }:{ title:string, isActive:boolean, setIsActive:Dispatch<SetStateAction<boolean>>, register:any,errors:any,reminderHours:string, reminderMins:string, reminderAmOrPm:string })=> {
+
 
     return (
         <div className="mb-5">
-                    <div className="flex justify-between bg-gray-100 rounded-t-lg py-4 px-2 items-center" onClick={() => setReminderOneActive(!reminderOneActive)}>
-                        <p>Reminder 1</p><span>10:00AM</span>
+                    <div className="flex justify-between bg-gray-100 rounded-t-lg py-4 px-2 items-center" onClick={() => setIsActive(!isActive)}>
+                        <p>{title}</p><span>10:00AM</span>
                     </div>
-                    <div className={ reminderOneActive ? "ease-in duration-500 max-h-[500px] overflow-hidden" : "overflow-hidden ease-in duration-500 max-h-0"}>
+                    <div className={ isActive ? "ease-in duration-500 max-h-[500px] overflow-hidden" : "overflow-hidden ease-in duration-500 max-h-0"}>
                         <div className="mt-5">
                             <div className="flex justify-between">
                                 <div className="inline-block relative w-1/4">
-                                    <select  className="w-full py-3 bg-gray-100 px-3 outline-none rounded-lg appearance-none">
+                                    <select {...register(reminderHours)}  className="w-full py-3 bg-gray-100 px-3 outline-none rounded-lg appearance-none">
                                         <option value="" ></option>
-                                        <option value="1">01</option>
-                                        <option value="2">02</option>
-                                        <option value="3">03</option>
-                                        <option value="4">04</option>
+                                        <option value="01">01</option>
+                                        <option value="02">02</option>
+                                        <option value="03">03</option>
+                                        <option value="04">04</option>
                                         <option value="05">05</option>
                                         <option value="06">06</option>
                                         <option value="07">07</option>
@@ -35,10 +33,11 @@ const  Reminder =()=> {
                                         className="pointer-events-none absolute inset-y-0 right-2 flex top-1 items-center text-gray-700">
                                         <RiArrowDownSLine/>
                                     </div>
+                                    <div className="h-1"><span className="text-xs text-[#FF0303]"> {errors.hours?.message}</span></div>
                                 </div>
 
                                 <div className="inline-block relative w-1/4">
-                                    <select  className="w-full py-3 bg-gray-100 px-3 outline-none rounded-lg appearance-none">
+                                    <select {...register(reminderMins)}  className="w-full py-3 bg-gray-100 px-3 outline-none rounded-lg appearance-none">
                                         <option value="" ></option>
                                         <option value="00">00</option>
                                         <option value="01">01</option>
@@ -105,17 +104,19 @@ const  Reminder =()=> {
                                         className="pointer-events-none absolute inset-y-0 right-2 flex top-1 items-center text-gray-700">
                                         <RiArrowDownSLine/>
                                     </div>
+                                    <div className="h-1"><span className="text-xs text-[#FF0303]"> {errors.mins?.message}</span></div>
                                 </div>
                                 <div className="inline-block relative w-1/4">
-                                    <select  className="w-full py-3 bg-gray-100 pl-3 outline-none rounded-lg appearance-none">
+                                    <select {...register(reminderAmOrPm)} className="w-full py-3 bg-gray-100 pl-3 outline-none rounded-lg appearance-none">
                                         <option value="" ></option>
-                                        <option value="1">AM</option>
-                                        <option value="2">PM</option>
+                                        <option value="am">AM</option>
+                                        <option value="pm">PM</option>
                                     </select>
                                     <div
                                         className="pointer-events-none absolute inset-y-0 right-2 flex top-1 items-center text-gray-700">
                                         <RiArrowDownSLine/>
                                     </div>
+                                    <div className="h-1"><span className="text-xs text-[#FF0303]"> {errors.amOrPm?.message}</span></div>
                                 </div>
 
                             </div>
@@ -123,8 +124,6 @@ const  Reminder =()=> {
                         </div>
                     </div>
                 </div>
-
-
     )
 }
 export default Reminder;

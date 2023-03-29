@@ -8,10 +8,10 @@ import Reminder from "@/component/Reminder";
 
 
 const NewPrescription =()=> {
-    // const [reminderOneActive, setReminderOneActive] = useState(false);
-    // // const [reminderTwoActive, setReminderTwoActive] = useState(false);
-    // // const [reminderThreeActive, setReminderThreeActive] = useState(false);
-    // // const [reminderFourActive, setReminderFourActive] = useState(false);
+    const [reminderOneActive, setReminderOneActive] = useState(false);
+    const [reminderTwoActive, setReminderTwoActive] = useState(false);
+    const [reminderThreeActive, setReminderThreeActive] = useState(false);
+    const [reminderFourActive, setReminderFourActive] = useState(false);
 
     const {
         handleSubmit,register,
@@ -21,17 +21,16 @@ const NewPrescription =()=> {
 
     const [value, setValue] = useState("1");
 
-    useEffect(()=>{},[value])
-
+    useEffect(()=>{},[value]);
 
     const onSubmitForm = (data:PrescriptionInputs) => {
         console.log(data);
-
     }
+
     const handleChange = (e:any) =>{
         setValue(e.target.value);
-
     }
+
 
     return (
         <div className="flex w-full py-4 px-5">
@@ -114,34 +113,118 @@ const NewPrescription =()=> {
                     </div>
 
                 { value === "1" ? (
-                    <Reminder/>
-                ): null}
+                    <Reminder
+                        reminderHours={"reminderOneHours"}
+                        reminderMins={"reminderOneMins"}
+                        reminderAmOrPm={"reminderOneAmOrPm"}
+                        register={register}
+                        errors={errors}
+                        title="Reminder 1"
+                        isActive={reminderOneActive}
+                        setIsActive={setReminderOneActive}/>
+                ):
+                    null}
 
                 { value === "2" ? (
                     <>
-                        <Reminder/>
-                        <Reminder/>
+                        <Reminder
+                            reminderHours={"reminderOneHours"}
+                            reminderMins={"reminderOneMins"}
+                            reminderAmOrPm={"reminderOneAmOrPm"}
+                            register={register}
+                            errors={errors}
+                            title="Reminder 1"
+                            isActive={reminderOneActive}
+                            setIsActive={setReminderOneActive}/>
+                        <Reminder
+                            reminderHours={"reminderTwoHours"}
+                            reminderMins={"reminderTwoMins"}
+                            reminderAmOrPm={"reminderTwoAmOrPm"}
+                            register={register}
+                            errors={errors}
+                            title="Reminder 2"
+                            isActive={reminderTwoActive}
+                            setIsActive={setReminderTwoActive}/>
                     </>
                     ): null}
 
                 { value === "3" ? (
                         <>
-                            <Reminder/>
-                            <Reminder/>
-                            <Reminder/>
+                            <Reminder
+                                reminderHours={"reminderOneHours"}
+                                reminderMins={"reminderOneMins"}
+                                reminderAmOrPm={"reminderOneAmOrPm"}
+                                register={register}
+                                errors={errors}
+                                title="Reminder 1"
+                                isActive={reminderOneActive}
+                                setIsActive={setReminderOneActive}/>
+
+                            <Reminder
+                                reminderHours={"reminderTwoHours"}
+                                reminderMins={"reminderTwoMins"}
+                                reminderAmOrPm={"reminderTwoAmOrPm"}
+                                register={register}
+                                errors={errors}
+                                title="Reminder 2"
+                                isActive={reminderTwoActive}
+                                setIsActive={setReminderTwoActive}/>
+
+                            <Reminder
+                                reminderHours={"reminderThreeHours"}
+                                reminderMins={"reminderThreeMins"}
+                                reminderAmOrPm={"reminderThreeAmOrPm"}
+                                register={register}
+                                errors={errors}
+                                title="Reminder 3"
+                                isActive={reminderThreeActive}
+                                setIsActive={setReminderThreeActive}/>
                         </>
                     ): null}
 
 
                 { value === "4" ? (
                     <>
-                        <Reminder/>
-                        <Reminder/>
-                        <Reminder/>
-                        <Reminder/>
+                        <Reminder
+                            reminderHours={"reminderOneHours"}
+                            reminderMins={"reminderOneMins"}
+                            reminderAmOrPm={"reminderOneAmOrPm"}
+                            register={register}
+                            errors={errors}
+                            title="Reminder 1"
+                            isActive={reminderOneActive}
+                            setIsActive={setReminderOneActive}/>
+
+                        <Reminder
+                            reminderHours={"reminderTwoHours"}
+                            reminderMins={"reminderTwoMins"}
+                            reminderAmOrPm={"reminderTwoAmOrPm"}
+                            register={register}
+                            errors={errors}
+                            title="Reminder 2"
+                            isActive={reminderTwoActive}
+                            setIsActive={setReminderTwoActive}/>
+
+                        <Reminder
+                            reminderHours={"reminderThreeHours"}
+                            reminderMins={"reminderThreeMins"}
+                            reminderAmOrPm={"reminderThreeAmOrPm"}
+                            register={register}
+                            errors={errors}
+                            title="Reminder 3"
+                            isActive={reminderThreeActive}
+                            setIsActive={setReminderThreeActive}/>
+
+                        <Reminder
+                            reminderHours={"reminderFourHours"}
+                            reminderMins={"reminderFourMins"}
+                            reminderAmOrPm={"reminderFourAmOrPm"}
+                            register={register}
+                            errors={errors}
+                            title="Reminder 4"
+                            isActive={reminderFourActive}
+                            setIsActive={setReminderFourActive}/>
                     </>): null}
-
-
 
 
                 <div className="w-full mt-8 flex items-center">
