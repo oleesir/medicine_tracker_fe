@@ -32,24 +32,24 @@ export const prescriptionSchema = yup.object({
     reminderTwoAmOrPm: yup
         .string()
         .required('Required'),
-    reminderThreeHours: yup
-        .string()
-        .required('Required'),
-    reminderThreeMins: yup
-        .string()
-        .required('Required'),
-    reminderThreeAmOrPm: yup
-        .string()
-        .required('Required'),
-    reminderFourHours: yup
-        .string()
-        .required('Required'),
-    reminderFourMins: yup
-        .string()
-        .required('Required'),
-    reminderFourAmOrPm: yup
-        .string()
-        .required('Required'),
+    // reminderThreeHours: yup
+    //     .string()
+    //     .required('Required'),
+    // reminderThreeMins: yup
+    //     .string()
+    //     .required('Required'),
+    // reminderThreeAmOrPm: yup
+    //     .string()
+    //     .required('Required'),
+    // reminderFourHours: yup
+    //     .string()
+    //     .required('Required'),
+    // reminderFourMins: yup
+    //     .string()
+    //     .required('Required'),
+    // reminderFourAmOrPm: yup
+    //     .string()
+    //     .required('Required'),
        endDate: yup.string()
            .required('Date is required')
            .matches(/^\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$/, 'Invalid date format'),

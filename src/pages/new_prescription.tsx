@@ -10,8 +10,8 @@ import Reminder from "@/component/Reminder";
 const NewPrescription =()=> {
     const [reminderOneActive, setReminderOneActive] = useState(false);
     const [reminderTwoActive, setReminderTwoActive] = useState(false);
-    const [reminderThreeActive, setReminderThreeActive] = useState(false);
-    const [reminderFourActive, setReminderFourActive] = useState(false);
+    // const [reminderThreeActive, setReminderThreeActive] = useState(false);
+    // const [reminderFourActive, setReminderFourActive] = useState(false);
 
     const {
         handleSubmit,register,
@@ -148,83 +148,83 @@ const NewPrescription =()=> {
                     </>
                     ): null}
 
-                { value === "3" ? (
-                        <>
-                            <Reminder
-                                reminderHours={"reminderOneHours"}
-                                reminderMins={"reminderOneMins"}
-                                reminderAmOrPm={"reminderOneAmOrPm"}
-                                register={register}
-                                errors={errors}
-                                title="Reminder 1"
-                                isActive={reminderOneActive}
-                                setIsActive={setReminderOneActive}/>
+                {/*{ value === "3" ? (*/}
+                {/*        <>*/}
+                {/*            <Reminder*/}
+                {/*                reminderHours={"reminderOneHours"}*/}
+                {/*                reminderMins={"reminderOneMins"}*/}
+                {/*                reminderAmOrPm={"reminderOneAmOrPm"}*/}
+                {/*                register={register}*/}
+                {/*                errors={errors}*/}
+                {/*                title="Reminder 1"*/}
+                {/*                isActive={reminderOneActive}*/}
+                {/*                setIsActive={setReminderOneActive}/>*/}
 
-                            <Reminder
-                                reminderHours={"reminderTwoHours"}
-                                reminderMins={"reminderTwoMins"}
-                                reminderAmOrPm={"reminderTwoAmOrPm"}
-                                register={register}
-                                errors={errors}
-                                title="Reminder 2"
-                                isActive={reminderTwoActive}
-                                setIsActive={setReminderTwoActive}/>
+                {/*            <Reminder*/}
+                {/*                reminderHours={"reminderTwoHours"}*/}
+                {/*                reminderMins={"reminderTwoMins"}*/}
+                {/*                reminderAmOrPm={"reminderTwoAmOrPm"}*/}
+                {/*                register={register}*/}
+                {/*                errors={errors}*/}
+                {/*                title="Reminder 2"*/}
+                {/*                isActive={reminderTwoActive}*/}
+                {/*                setIsActive={setReminderTwoActive}/>*/}
 
-                            <Reminder
-                                reminderHours={"reminderThreeHours"}
-                                reminderMins={"reminderThreeMins"}
-                                reminderAmOrPm={"reminderThreeAmOrPm"}
-                                register={register}
-                                errors={errors}
-                                title="Reminder 3"
-                                isActive={reminderThreeActive}
-                                setIsActive={setReminderThreeActive}/>
-                        </>
-                    ): null}
+                {/*            <Reminder*/}
+                {/*                reminderHours={"reminderThreeHours"}*/}
+                {/*                reminderMins={"reminderThreeMins"}*/}
+                {/*                reminderAmOrPm={"reminderThreeAmOrPm"}*/}
+                {/*                register={register}*/}
+                {/*                errors={errors}*/}
+                {/*                title="Reminder 3"*/}
+                {/*                isActive={reminderThreeActive}*/}
+                {/*                setIsActive={setReminderThreeActive}/>*/}
+                {/*        </>*/}
+                {/*    ): null}*/}
 
 
-                { value === "4" ? (
-                    <>
-                        <Reminder
-                            reminderHours={"reminderOneHours"}
-                            reminderMins={"reminderOneMins"}
-                            reminderAmOrPm={"reminderOneAmOrPm"}
-                            register={register}
-                            errors={errors}
-                            title="Reminder 1"
-                            isActive={reminderOneActive}
-                            setIsActive={setReminderOneActive}/>
+                {/*{ value === "4" ? (*/}
+                {/*    <>*/}
+                {/*        <Reminder*/}
+                {/*            reminderHours={"reminderOneHours"}*/}
+                {/*            reminderMins={"reminderOneMins"}*/}
+                {/*            reminderAmOrPm={"reminderOneAmOrPm"}*/}
+                {/*            register={register}*/}
+                {/*            errors={errors}*/}
+                {/*            title="Reminder 1"*/}
+                {/*            isActive={reminderOneActive}*/}
+                {/*            setIsActive={setReminderOneActive}/>*/}
 
-                        <Reminder
-                            reminderHours={"reminderTwoHours"}
-                            reminderMins={"reminderTwoMins"}
-                            reminderAmOrPm={"reminderTwoAmOrPm"}
-                            register={register}
-                            errors={errors}
-                            title="Reminder 2"
-                            isActive={reminderTwoActive}
-                            setIsActive={setReminderTwoActive}/>
+                {/*        <Reminder*/}
+                {/*            reminderHours={"reminderTwoHours"}*/}
+                {/*            reminderMins={"reminderTwoMins"}*/}
+                {/*            reminderAmOrPm={"reminderTwoAmOrPm"}*/}
+                {/*            register={register}*/}
+                {/*            errors={errors}*/}
+                {/*            title="Reminder 2"*/}
+                {/*            isActive={reminderTwoActive}*/}
+                {/*            setIsActive={setReminderTwoActive}/>*/}
 
-                        <Reminder
-                            reminderHours={"reminderThreeHours"}
-                            reminderMins={"reminderThreeMins"}
-                            reminderAmOrPm={"reminderThreeAmOrPm"}
-                            register={register}
-                            errors={errors}
-                            title="Reminder 3"
-                            isActive={reminderThreeActive}
-                            setIsActive={setReminderThreeActive}/>
+                {/*        <Reminder*/}
+                {/*            reminderHours={"reminderThreeHours"}*/}
+                {/*            reminderMins={"reminderThreeMins"}*/}
+                {/*            reminderAmOrPm={"reminderThreeAmOrPm"}*/}
+                {/*            register={register}*/}
+                {/*            errors={errors}*/}
+                {/*            title="Reminder 3"*/}
+                {/*            isActive={reminderThreeActive}*/}
+                {/*            setIsActive={setReminderThreeActive}/>*/}
 
-                        <Reminder
-                            reminderHours={"reminderFourHours"}
-                            reminderMins={"reminderFourMins"}
-                            reminderAmOrPm={"reminderFourAmOrPm"}
-                            register={register}
-                            errors={errors}
-                            title="Reminder 4"
-                            isActive={reminderFourActive}
-                            setIsActive={setReminderFourActive}/>
-                    </>): null}
+                {/*        <Reminder*/}
+                {/*            reminderHours={"reminderFourHours"}*/}
+                {/*            reminderMins={"reminderFourMins"}*/}
+                {/*            reminderAmOrPm={"reminderFourAmOrPm"}*/}
+                {/*            register={register}*/}
+                {/*            errors={errors}*/}
+                {/*            title="Reminder 4"*/}
+                {/*            isActive={reminderFourActive}*/}
+                {/*            setIsActive={setReminderFourActive}/>*/}
+                {/*    </>): null}*/}
 
 
                 <div className="w-full mt-8 flex items-center">
