@@ -1,21 +1,24 @@
 import { Dispatch, SetStateAction } from "react";
-import { RiArrowDownSLine } from "react-icons/ri";
+import { BsDot } from "react-icons/bs";
+import { ReminderProps } from "@/types";
 
 
-const  Reminder =({ title, isActive, setIsActive, register, errors, reminderHours, reminderMins, reminderAmOrPm }:{ title:string, isActive:boolean, setIsActive:Dispatch<SetStateAction<boolean>>, register:any,errors:any,reminderHours:string, reminderMins:string, reminderAmOrPm:string })=> {
+const  Reminder =({ title, isActive, setIsActive, initialHour, setHour, initialMin, setMin, initialDayOrNight, setDayOrNight }:ReminderProps)=> {
 
 
     return (
-        <div className="mb-5">
-                    <div className="flex justify-between bg-gray-100 rounded-t-lg py-4 px-2 items-center" onClick={() => setIsActive(!isActive)}>
-                        <p>{title}</p><span>10:00AM</span>
+        <div className="mb-5 bg-gray-100 rounded-lg">
+                    <div className="flex justify-between py-4 px-2 items-center" onClick={() => setIsActive(!isActive)}>
+                        <p>{title}</p><span>{`${initialHour}:${initialMin} ${initialDayOrNight}`}</span>
                     </div>
-                    <div className={ isActive ? "ease-in duration-500 max-h-[500px] overflow-hidden" : "overflow-hidden ease-in duration-500 max-h-0"}>
-                        <div className="mt-5">
+
+                    <div className={ isActive ? " ease-in duration-300 max-h-[100px] overflow-hidden" : "overflow-hidden ease-in duration-300 max-h-0"}>
+                        <div className=" py-5 px-20">
                             <div className="flex justify-between">
-                                <div className="inline-block relative w-1/4">
-                                    <select {...register(reminderHours)}  className="w-full py-3 bg-gray-100 px-3 outline-none rounded-lg appearance-none">
-                                        <option value="" ></option>
+                                <div className="w-full">
+                                    <select value={initialHour}
+                                            defaultValue={initialHour}
+                                            onChange={(e:any) => setHour(e.target.value)}  className="w-full p-3 p bg-[#FFF] outline-none rounded-l-lg appearance-none text-2xl">
                                         <option value="01">01</option>
                                         <option value="02">02</option>
                                         <option value="03">03</option>
@@ -23,21 +26,23 @@ const  Reminder =({ title, isActive, setIsActive, register, errors, reminderHour
                                         <option value="05">05</option>
                                         <option value="06">06</option>
                                         <option value="07">07</option>
-                                        <option value="08">08</option>
+                                        <option value="08" >08</option>
                                         <option value="09">09</option>
                                         <option value="10">10</option>
                                         <option value="11">11</option>
                                         <option value="12">12</option>
                                     </select>
-                                    <div
-                                        className="pointer-events-none absolute inset-y-0 right-2 flex top-1 items-center text-gray-700">
-                                        <RiArrowDownSLine/>
-                                    </div>
-                                    <div className="h-1"><span className="text-xs text-[#FF0303]"> {errors.hours?.message}</span></div>
+                                </div>
+                                <div className="flex flex-col items-center bg-[#FFF] justify-center">
+                                    <BsDot fontSize={15}/>
+                                    <BsDot fontSize={15}/>
                                 </div>
 
-                                <div className="inline-block relative w-1/4">
-                                    <select {...register(reminderMins)}  className="w-full py-3 bg-gray-100 px-3 outline-none rounded-lg appearance-none">
+                                <div className="w-full">
+                                    <select
+                                        value={initialMin}
+                                        defaultValue={initialMin}
+                                        onChange={(e:any) => setMin(e.target.value)} className="w-full p-3 bg-[#FFF] outline-none appearance-none text-2xl">
                                         <option value="" ></option>
                                         <option value="00">00</option>
                                         <option value="01">01</option>
@@ -100,23 +105,15 @@ const  Reminder =({ title, isActive, setIsActive, register, errors, reminderHour
                                         <option value="58">58</option>
                                         <option value="59">59</option>
                                     </select>
-                                    <div
-                                        className="pointer-events-none absolute inset-y-0 right-2 flex top-1 items-center text-gray-700">
-                                        <RiArrowDownSLine/>
-                                    </div>
-                                    <div className="h-1"><span className="text-xs text-[#FF0303]"> {errors.mins?.message}</span></div>
+
                                 </div>
-                                <div className="inline-block relative w-1/4">
-                                    <select {...register(reminderAmOrPm)} className="w-full py-3 bg-gray-100 pl-3 outline-none rounded-lg appearance-none">
-                                        <option value="" ></option>
-                                        <option value="am">AM</option>
-                                        <option value="pm">PM</option>
+                                <div className=" w-full">
+                                    <select value={initialDayOrNight}
+                                            defaultValue={initialMin}
+                                            onChange={(e:any) => setDayOrNight(e.target.value)} className="w-full p-3 bg-[#FFF]  outline-none  rounded-r-lg appearance-none text-2xl">
+                                        <option value="AM">AM</option>
+                                        <option value="PM">PM</option>
                                     </select>
-                                    <div
-                                        className="pointer-events-none absolute inset-y-0 right-2 flex top-1 items-center text-gray-700">
-                                        <RiArrowDownSLine/>
-                                    </div>
-                                    <div className="h-1"><span className="text-xs text-[#FF0303]"> {errors.amOrPm?.message}</span></div>
                                 </div>
 
                             </div>

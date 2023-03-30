@@ -7,7 +7,7 @@ import { MdOutlineAdd } from "react-icons/md";
 
 
 
-const Home =()=> {
+const Landing =()=> {
     const router = useRouter();
     const [isActive, setIsActive] = useState(false);
 
@@ -36,4 +36,4 @@ const Home =()=> {
         </div>
     )
 }
-export default Home;
+export default Landing;

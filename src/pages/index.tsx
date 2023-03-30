@@ -1,5 +1,6 @@
 import Head from "next/head";
-import Image from 'next/image';
+import Landing from "@/component/Landing";
+
 
 export default function Home() {
 
@@ -11,14 +12,7 @@ export default function Home() {
               <meta name="viewport" content="width=device-width, initial-scale=1" />
               <link rel="icon" href="/favicon.ico" />
           </Head>
-          <div className="grid grid-cols-1 h-screen lg:grid-cols-2">
-              <div className="flex bg-[#3a596b]">
-                  <div className="flex flex-col justify-center items-center bg-[#224559] clip-path-polygon-[0_13%,100%_0,100%_86%,0_100%] px-5">
-                      <Image src='/med_intro.png' alt='undraw'  width={250} height={200} quality={10}/>
-                      <p className=" lg:text-2xl text-[#fff] mt-2 text-sm ">RemindMe is a web app developed by Olive Inc. The platforms that allows users to create lists of reminders for medications and set notifications for themselves.</p>
-                  </div>
-              </div>
-          </div>
+          <Landing/>
       </>
 
   )

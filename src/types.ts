@@ -1,3 +1,4 @@
+import { Dispatch, SetStateAction } from "react";
 
 export  type SignupInputs = {
     firstName: string,
@@ -21,3 +22,16 @@ export type PrescriptionInputs = {
     form: string,
     endDate: string,
 };
+
+
+export type ReminderProps ={
+    title:string,
+    isActive: boolean,
+    setIsActive:Dispatch<SetStateAction<boolean>>,
+    initialHour:string,
+    setHour:Dispatch<SetStateAction<string>>,
+    initialMin:string,
+    setMin:Dispatch<SetStateAction<string>>,
+    initialDayOrNight:string,
+    setDayOrNight:Dispatch<SetStateAction<string>>
+}
