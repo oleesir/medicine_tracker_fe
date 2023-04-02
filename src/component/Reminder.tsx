@@ -13,7 +13,7 @@ const  Reminder =({ title, isActive, setIsActive, initialHour, setHour, initialM
                     </div>
 
                     <div className={ isActive ? " ease-in duration-300 max-h-[100px] overflow-hidden" : "overflow-hidden ease-in duration-300 max-h-0"}>
-                        <div className=" py-5 px-20">
+                        <div className=" py-5 px-[60px]">
                             <div className="flex justify-between">
                                 <div className="w-full">
                                     <select value={initialHour}

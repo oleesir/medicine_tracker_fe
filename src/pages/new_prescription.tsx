@@ -1,35 +1,45 @@
 import { useEffect, useState } from "react";
-import { PrescriptionInputs } from "@/types";
 import { RiArrowDownSLine } from "react-icons/ri";
 import Reminder from "@/component/Reminder";
+import Calender from "@/component/Calender";
+import { format, isAfter, startOfToday } from "date-fns";
+import { SlCalender } from "react-icons/sl";
+
 
 
 const NewPrescription =()=> {
+    let today = startOfToday()
     const [reminderOneActive, setReminderOneActive] = useState(false);
     const [reminderOneHour, setReminderOneHour] = useState("08");
     const [reminderOneMin, setReminderOneMin] = useState("00");
     const [reminderOneDayOrNight, setReminderOneDayOrNight] = useState("AM");
-
     const [reminderTwoActive, setReminderTwoActive] = useState(false);
     const [reminderTwoHour, setReminderTwoHour] = useState("12");
     const [reminderTwoMin, setReminderTwoMin] = useState("00");
     const [reminderTwoDayOrNight, setReminderTwoDayOrNight] = useState("PM");
-
     const [reminderThreeActive, setReminderThreeActive] = useState(false);
     const [reminderThreeHour, setReminderThreeHour] = useState("04");
     const [reminderThreeMin, setReminderThreeMin] = useState("00");
     const [reminderThreeDayOrNight, setReminderThreeDayOrNight] = useState("PM");
-
     const [value, setValue] = useState("1");
+    const [selectedDate, setSelectedDate] = useState<Date>(today);
+    const [isActive, setIsActive] = useState(false);
 
     useEffect(()=>{},[value]);
 
-    const onSubmitForm = (data:PrescriptionInputs) => {
-        console.log(data);
-    }
-
     const handleChange = (e:any) =>{
         setValue(e.target.value);
+    }
+
+    const handleBtn = () =>{
+        setIsActive((isActive)=>!isActive);
+    }
+
+    const handleDate = ()=>{
+        if(isAfter(selectedDate,today)){
+            return format(selectedDate, 'yyyy-MM-dd')
+        }
+        return format(today, 'yyyy-MM-dd')
     }
 
 
@@ -89,8 +99,20 @@ const NewPrescription =()=> {
                 </div>
                 <div className="mb-5">
                     <label className="text-gray-700 mb-2">End date</label>
-                    <input type="text"  placeholder="YYYY-MM-DD"  className="w-full py-3 bg-gray-100 placeholder:text-gray-500 px-4 outline-none rounded-lg "/>
+                    <div className="rounded-lg bg-gray-100">
+                        <button type="button" onClick={handleBtn} className="w-full flex justify-between py-3 bg-gray-100 placeholder:text-gray-500 px-4 outline-none text-left">
+                            <p>{handleDate()}</p>
+                            <SlCalender fontSize={24}/>
+                        </button>
+                        <div className={ isActive ? "ease-in duration-500 max-h-[500px] overflow-hidden" : "overflow-hidden ease-in duration-500 max-h-0"}>
+                            <Calender handleCalender={setIsActive} setSelectedDate={setSelectedDate}/>
+                        </div>
+                    </div>
+
+
                 </div>
+
+
 
                 <div className="inline-block relative mb-5">
                         <label className="text-gray-700 mb-2">Number of intakes a day</label>
@@ -184,7 +206,7 @@ const NewPrescription =()=> {
 
                 <div className="w-full mt-8 flex items-center">
                     <button
-                        type="submit"
+                        type="button"
                         className= "w-full inline-block rounded bg-primary-accent-200 px-5 py-3  text-medium font-medium bg-[#224559] leading-normal text-[#fff]"
                     >
                         Done

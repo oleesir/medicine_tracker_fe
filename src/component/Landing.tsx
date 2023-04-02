@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useRouter } from "next/router";
+import { NextRouter, useRouter } from "next/router";
 import Calender from "@/component/Calender";
 import Card from "@/component/Cards/Card";
 import { RiArrowDownSLine, RiArrowLeftSLine } from "react-icons/ri";
@@ -8,7 +8,7 @@ import { MdOutlineAdd } from "react-icons/md";
 
 
 const Landing =()=> {
-    const router = useRouter();
+    const router:NextRouter = useRouter();
     const [isActive, setIsActive] = useState(false);
 
     const routeToNewPrescription = async() => {
@@ -25,7 +25,9 @@ const Landing =()=> {
                 <div className="flex justify-between bg-[#539165] rounded-t-lg py-4 px-2 items-center" onClick={() => setIsActive(!isActive)}>
                     <p className="text-[#fff]">Todays date</p><span>{isActive ? <RiArrowDownSLine fontSize={25} color={"#FFF"} /> : <RiArrowLeftSLine fontSize={25} color={"#FFF"}/> }</span>
                 </div>
-                <Calender isActive={isActive}/>
+                <div className={ isActive ? "ease-in duration-500 max-h-[500px] overflow-hidden" : "overflow-hidden ease-in duration-500 max-h-0"}>
+                <Calender/>
+                </div>
                 <div className="w-full flex justify-end mt-4"></div>
                 <div className="mt-4">
                     <Card/>
