@@ -100,7 +100,7 @@ const NewPrescription =()=> {
                 <div className="mb-5">
                     <label className="text-gray-700 mb-2">End date</label>
                     <div className="rounded-lg bg-gray-100">
-                        <button type="button" onClick={handleBtn} className="w-full flex justify-between py-3 bg-gray-100 placeholder:text-gray-500 px-4 outline-none text-left">
+                        <button type="button" onClick={handleBtn} className="w-full flex justify-between py-3 bg-gray-100 placeholder:text-gray-500 px-4 outline-none text-left rounded-lg ">
                             <p>{handleDate()}</p>
                             <SlCalender fontSize={24}/>
                         </button>
